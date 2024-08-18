@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: auto;
+  background-color: #232936;
+  color: #E7D09D;
+}
+
+main {
+  height: fit-content;
+  min-height: 80vh;
+  width: 100vw;
+  background-color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-width: 75vw;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+footer {
+  height: 10vh;
+  width: auto;
+}
