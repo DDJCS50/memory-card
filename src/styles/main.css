@@ -7,6 +7,21 @@ header {
   background-color: #232936;
   color: #E7D09D;
 }
+header .title {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+header .title h1 {
+  margin: 0px;
+}
+header .title p {
+  margin: 0px;
+}
+header .scoreContainer {
+  margin-left: auto;
+  padding-right: 12px;
+}
 
 main {
   height: -moz-fit-content;
@@ -16,6 +31,30 @@ main {
   background-color: aliceblue;
   display: flex;
   flex-wrap: wrap;
+}
+main .cardBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px;
+  height: 548px;
+  width: auto;
+  gap: 12px;
+}
+main .cardBox .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  background-color: #e2e8f0;
+  padding: 24px;
+  border: 1px solid black;
+  box-shadow: 6px 7px 10px -5px gray;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 body {
