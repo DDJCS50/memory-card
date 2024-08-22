@@ -33,25 +33,51 @@ function Score({ playerScore }) {
 }
 
 function CardContainer({ score, setScore }) {
+  const [stateArray, setStateArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
   return (
     <div className="cardBox">
-      <Card score={score} setScore={setScore}></Card>
-      <Card score={score} setScore={setScore}></Card>
-      <Card score={score} setScore={setScore}></Card>
-      <Card score={score} setScore={setScore}></Card>
+      <Card score={score} setScore={setScore} value={0} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={1} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={2} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={3} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={4} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={5} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={6} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={7} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={8} stateArray={stateArray} setStateArray={setStateArray}></Card>
+      <Card score={score} setScore={setScore} value={9} stateArray={stateArray} setStateArray={setStateArray}></Card>
     </div>
   );
 }
 
-function Card({ score, setScore }) {
+function Card({ score, setScore, value, stateArray, setStateArray }) {
+  function handleClick() {
+    setScore(score + 1);
+    setStateArray(randomizer([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+  }
+
   return (
     <div
       className="card"
       onClick={() => {
-        setScore(score + 1);
+        handleClick();
       }}
-    ></div>
+    >
+      {stateArray[value]}
+    </div>
   );
+}
+
+function randomizer(arr) {
+  let tempArr = [];
+  while (tempArr.length < arr.length) {
+    let indexHolder = Math.floor(Math.random() * 10);
+    if (arr.includes(indexHolder) == true && tempArr.includes(indexHolder) == false) {
+      tempArr.push(indexHolder);
+    }
+  }
+  return tempArr;
 }
 
 export { Page };
