@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Page } from "./components/page";
+import { Page } from "./components/page.jsx";
 
 function App() {
   return (

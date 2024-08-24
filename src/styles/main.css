@@ -34,20 +34,21 @@ main {
 }
 main .cardBox {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
   padding: 24px;
   height: 548px;
-  width: auto;
+  width: 100%;
   gap: 12px;
+  flex-wrap: wrap;
 }
 main .cardBox .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25px;
-  width: 25px;
+  height: 250px;
+  width: 250px;
   background-color: #e2e8f0;
   padding: 24px;
   border: 1px solid black;
@@ -55,6 +56,7 @@ main .cardBox .card {
   font-size: larger;
   font-weight: bolder;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 body {
