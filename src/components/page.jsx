@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 function Page() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [pokemonStorage, setPokemonStorage] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getPokemon();
+      setPokemonStorage(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -15,7 +25,7 @@ function Page() {
         <Score playerScore={score} highScore={highScore}></Score>
       </header>
       <main>
-        <CardContainer score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore}></CardContainer>
+        <CardContainer score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} pokemonArray={pokemonStorage}></CardContainer>
       </main>
       <footer></footer>
     </>
@@ -31,27 +41,137 @@ function Score({ playerScore, highScore }) {
   );
 }
 
-function CardContainer({ score, setScore, highScore, setHighScore }) {
+function CardContainer({ score, setScore, highScore, setHighScore, pokemonArray }) {
   const [stateArray, setStateArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const [clickedArray, setClickedArray] = useState([]);
 
   return (
     <div className="cardBox">
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[0]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[1]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[2]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[3]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[4]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[5]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[6]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[7]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[8]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
-      <Card score={score} setScore={setScore} highScore={highScore} setHighScore={setHighScore} value={stateArray[9]} stateArray={stateArray} setStateArray={setStateArray} clickedArray={clickedArray} setClickedArray={setClickedArray}></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[0]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[1]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[2]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[3]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[4]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[5]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[6]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[7]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[8]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
+      <Card
+        score={score}
+        setScore={setScore}
+        pokemonArray={pokemonArray}
+        highScore={highScore}
+        setHighScore={setHighScore}
+        value={stateArray[9]}
+        stateArray={stateArray}
+        setStateArray={setStateArray}
+        clickedArray={clickedArray}
+        setClickedArray={setClickedArray}
+      ></Card>
     </div>
   );
 }
 
-function Card({ score, setScore, value, highScore, setHighScore, setStateArray, clickedArray, setClickedArray }) {
+function Card({ score, setScore, value, highScore, setHighScore, setStateArray, clickedArray, setClickedArray, pokemonArray }) {
   useEffect(() => {
     if (score > highScore) {
       setHighScore(score);
@@ -69,16 +189,33 @@ function Card({ score, setScore, value, highScore, setHighScore, setStateArray, 
     }
   }
 
-  return (
-    <div
-      className="card"
-      onClick={() => {
-        handleClick();
-      }}
-    >
-      {value}
-    </div>
-  );
+  if (pokemonArray.length == 0) {
+    return (
+      <div
+        className="card"
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        {value}
+        <p></p>
+        <img src="" alt="ditto sprite" />
+      </div>
+    );
+  } else if (pokemonArray.length > 0) {
+    return (
+      <div
+        className="card"
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        {value}
+        <p>{pokemonArray[value].name.toUpperCase()}</p>
+        <img src={pokemonArray[value].sprites.front_default} alt="pokemon sprite" />
+      </div>
+    );
+  }
 }
 
 function randomizer(arr) {
@@ -90,6 +227,25 @@ function randomizer(arr) {
     }
   }
   return tempArr;
+}
+
+async function getPokemon() {
+  const responses = await Promise.all([
+    fetch("https://pokeapi.co/api/v2/pokemon/ditto/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/suicune/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/squirtle/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/mudkip/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/pikachu/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/staryu/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/onix/").then((r) => r.json()),
+    fetch("https://pokeapi.co/api/v2/pokemon/gengar/").then((r) => r.json()),
+  ]);
+
+  console.log(responses);
+  let pokemonObjectArray = responses;
+  return pokemonObjectArray;
 }
 
 export { Page };
