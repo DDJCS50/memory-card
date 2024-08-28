@@ -197,7 +197,6 @@ function Card({ score, setScore, value, highScore, setHighScore, setStateArray, 
           handleClick();
         }}
       >
-        {value}
         <p></p>
         <img src="" alt="ditto sprite" />
       </div>
@@ -210,7 +209,6 @@ function Card({ score, setScore, value, highScore, setHighScore, setStateArray, 
           handleClick();
         }}
       >
-        {value}
         <p>{pokemonArray[value].name.toUpperCase()}</p>
         <img src={pokemonArray[value].sprites.front_default} alt="pokemon sprite" />
       </div>
